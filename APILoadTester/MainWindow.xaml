@@ -1,0 +1,51 @@
+﻿<Window x:Class="APILoadTester.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:APILoadTester"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>Token:</TextBlock>
+                <TextBox Margin="10,0,0,0" Name="TextBox_Token" Width="600" Height="100" TextWrapping="Wrap"/>
+            </StackPanel>
+            <StackPanel Margin="0,10,0,10" Orientation="Horizontal">
+                <TextBlock>Thread Count:</TextBlock>
+                <TextBox Margin="10,0,0,0" Name="TextBox_ThreadCount" Width="100"/>
+            </StackPanel>
+            <StackPanel Margin="0,10,0,10" Orientation="Horizontal">
+                <TextBlock>Requests per Thread:</TextBlock>
+                <TextBox Margin="10,0,0,0" Name="TextBox_RequestCount" Width="100"/>
+            </StackPanel>
+            <Button Name="Button_Start" Click="Button_Start_Click">Start</Button>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>Sent:</TextBlock>
+                <TextBlock Margin="10,0,0,0" Name="TextBlock_SentCount"/>
+            </StackPanel>
+            <StackPanel Margin="0,10,0,10" Orientation="Horizontal">
+                <TextBlock>Success:</TextBlock>
+                <TextBlock Margin="10,0,0,0" Name="TextBlock_SuccessCount"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>Failure:</TextBlock>
+                <TextBlock Margin="10,0,0,0" Name="TextBlock_FailedCount"/>
+            </StackPanel>
+            <Button Name="Button_ResetStats" Click="Button_ResetStats_Click">Reset Stats</Button>
+        </StackPanel>
+        <ScrollViewer Grid.Row="2">
+            <TextBox Name="TextBlock_Response" TextWrapping="Wrap">
+                Hi
+            </TextBox>
+        </ScrollViewer>
+    </Grid>
+</Window>
